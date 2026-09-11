@@ -21,7 +21,7 @@ training:
   gradient_accumulation_steps: 1
   max_length: 1024
   assistant_only_loss: true
-  gradient_checkpointing: true
+  gradient_checkpointing: false
   bf16: true
   fp16: false
   optim: adamw_torch_fused
