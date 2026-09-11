@@ -16,9 +16,9 @@ training:
   output_dir: /workspace/sft_experiment/runs/olmo3-7b
   num_train_epochs: 8
   label_smoothing: 0.0
-  per_device_train_batch_size: 4
-  per_device_eval_batch_size: 1
-  gradient_accumulation_steps: 4
+  per_device_train_batch_size: 16
+  per_device_eval_batch_size: 16
+  gradient_accumulation_steps: 1
   max_length: 1024
   assistant_only_loss: true
   gradient_checkpointing: true
