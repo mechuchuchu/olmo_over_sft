@@ -1,0 +1,18 @@
+{%- set has_system = messages|selectattr('role', 'equalto', 'system')|list|length > 0 -%}
+{%- if not has_system -%}
+{{- '<|im_start|>system\nYou are a helpful function-calling AI assistant. You do not currently have access to any functions. <functions></functions><|im_end|>\n' -}}
+{%- endif -%}
+{%- for message in messages -%}
+{%- if message['role'] == 'system' -%}
+{{- '<|im_start|>system\n' + message['content'] + '<|im_end|>\n' -}}
+{%- elif message['role'] == 'user' -%}
+{{- '<|im_start|>user\n' + message['content'] + '<|im_end|>\n' -}}
+{%- elif message['role'] == 'assistant' -%}
+{{- '<|im_start|>assistant\n' -}}{% generation %}{{- message['content'] -}}{{- eos_token -}}{% endgeneration %}{%- if not loop.last -%}{{- '<|im_end|>\n' -}}{%- endif -%}
+{%- elif message['role'] == 'tool' or message['role'] == 'environment' -%}
+{{- '<|im_start|>environment\n' + message['content'] + '<|im_end|>\n' -}}
+{%- endif -%}
+{%- endfor -%}
+{%- if add_generation_prompt -%}
+{{- '<|im_start|>assistant\n' -}}
+{%- endif -%}

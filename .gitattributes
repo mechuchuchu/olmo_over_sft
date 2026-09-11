@@ -1,0 +1,21 @@
+# Normalize text files to LF in the repository and working tree.
+* text=auto eol=lf
+
+# Explicit text formats
+*.md text eol=lf
+*.py text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.jinja text eol=lf
+
+# Binary model/checkpoint and archive formats
+*.bin binary
+*.pt binary
+*.pth binary
+*.safetensors binary
+*.ckpt binary
+*.zip binary
+*.tar binary
+*.gz binary

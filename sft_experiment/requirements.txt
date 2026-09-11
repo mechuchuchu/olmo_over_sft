@@ -1,0 +1,12 @@
+# PyTorch is provided by the CUDA-enabled image. Install the matching CUDA
+# wheel separately when reproducing this environment; do not overwrite it
+# with a default CPU wheel from PyPI.
+
+accelerate==1.15.0
+datasets==5.0.1
+huggingface-hub==1.30.0
+PyYAML==6.0.3
+safetensors==0.8.0
+tokenizers==0.23.2
+transformers==5.17.0
+trl==1.13.0

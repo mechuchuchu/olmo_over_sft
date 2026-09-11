@@ -1,0 +1,22 @@
+# Local Hugging Face cache and dataset downloads
+.hf_home/
+
+# Training outputs and checkpoints uploaded separately to Hugging Face
+sft_experiment/runs/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Local environments and secrets
+.venv/
+.env
+.env.*
+
+# Logs and local editor files
+*.log
+.DS_Store
+.idea/
+.vscode/
